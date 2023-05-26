@@ -1,5 +1,5 @@
 import discord
-import responses
+from . import responses
 
 
 async def send_message(message, user_message:str, is_private:bool):
@@ -9,8 +9,7 @@ async def send_message(message, user_message:str, is_private:bool):
     except Exception as e:
         print(e)
 
-def run_discord_bot():
-    TOKEN = 'MTExMTUyMDAwMDE0NzE5Nzk4Ng.GLJiRg.hpDWLe90jiY1E2gglIe465MCZoYw-rMiAXLdiI'
+def run_discord_bot(token):
     intents = discord.Intents.default()
     intents.messages = True
     intents.message_content = True
@@ -36,4 +35,4 @@ def run_discord_bot():
         else:
             await send_message(message, user_message, is_private=False)
 
-    client.run(TOKEN)
+    client.run(token)

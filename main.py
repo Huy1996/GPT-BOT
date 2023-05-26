@@ -1,6 +1,6 @@
-import bot
+import app
 
 if __name__ == "__main__":
     # run the bot
     
-    bot.run_discord_bot()
+    app.create_app()
